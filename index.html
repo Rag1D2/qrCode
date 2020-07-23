@@ -12,13 +12,11 @@
     <script src="qrcode.min.js"></script>
     <script>
       let qrData = document.getElementById('qr-data');
-      new QRCode(
-        document.getElementById('qrcode'),
-        'http://jindo.dev.naver.com/collie'
-      );
+      let qrcode = new QRCode(document.getElementById('qrcode'));
       function generateQR() {
         let data = qrData.value;
-        alert(data);
+
+        qrcode.makeCode(data);
       }
     </script>
   </body>
