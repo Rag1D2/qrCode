@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code</title>
+  </head>
+  <body>
+    <input type="text" id="qr-data" onChange="generateQR()" />
+    <div id="qrcode"></div>
+
+    <script src="qrcode.min.js"></script>
+    <script>
+      let qrData = document.getElementById('qr-data');
+      new QRCode(
+        document.getElementById('qrcode'),
+        'http://jindo.dev.naver.com/collie'
+      );
+      function generateQR() {
+        let data = qrData.value;
+        alert(data);
+      }
+    </script>
+  </body>
+</html>
